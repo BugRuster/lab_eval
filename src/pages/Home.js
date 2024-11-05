@@ -1,29 +1,41 @@
 import React from 'react';
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-bootstrap';
+import image1 from '../images/image1.jpg';
+import image2 from '../images/image2.jpg';
+import image3 from '../images/image3.jpg';
+import image4 from '../images/image4.jpg';
 
 function Home() {
-  const images = [
-    "https://via.placeholder.com/400x300?text=Image+1",
-    "https://via.placeholder.com/400x300?text=Image+2",
-    "https://via.placeholder.com/400x300?text=Image+3",
-    "https://via.placeholder.com/400x300?text=Image+4"
-  ];
-
   return (
-    <div className="container mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-4">Welcome to the Home Page</h2>
-      <div className="grid grid-cols-2 gap-4">
-        {images.map((image, index) => (
-          <div key={index} className="border rounded-lg overflow-hidden shadow-lg">
-            <img src={image} alt={`Card ${index + 1}`} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="text-xl font-semibold">Card {index + 1}</h3>
-              <p>This is a sample card description.</p>
-            </div>
-          </div>
-        ))}
-      </div>
+    <div>
+      <h2>Welcome to the Home Page</h2>
+      <p>This is a protected page accessible after login.</p>
+      <Carousel>
+        <Carousel.Item>
+          <img className="d-block w-100" src={image1} alt="First slide" />
+          <Carousel.Caption>
+            <h3>First Image</h3>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src={image2} alt="Second slide" />
+          <Carousel.Caption>
+            <h3>Second Image</h3>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src={image3} alt="Third slide" />
+          <Carousel.Caption>
+            <h3>Third Image</h3>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src={image4} alt="Fourth slide" />
+          <Carousel.Caption>
+            <h3>Fourth Image</h3>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
     </div>
   );
 }
